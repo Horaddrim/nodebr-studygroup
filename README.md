@@ -4,7 +4,7 @@ Esse é o repositório que contém todos os códigos que elaboramos durante noss
 
 Caso queira acompanhar:
 
-* YouTube: https://www.youtube.com/watch?v=c5VEj9GmZ4M
+* YouTube: https://www.youtube.com/channel/UCd4Cp-rzdSAze6C-FOFQ3aw
 * Slack da NodeBR: http://slack.nodebr.org/
 * Telegram: https://telegram.me/nodebr
 * Twitter: https://twitter.com/nodebr
