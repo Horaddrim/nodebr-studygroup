@@ -1,0 +1,15 @@
+{
+  "name": "encontro4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "eventEmitterNativo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nats": "1.0.0",
+    "nats-hemera": "5.8.5"
+  }
+}
