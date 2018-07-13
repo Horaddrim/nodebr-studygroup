@@ -13,7 +13,7 @@ function main() {
         default:
             dotenv.config({path: './config/.env.dev'});
     }
-    
+
     app();
 }
 
