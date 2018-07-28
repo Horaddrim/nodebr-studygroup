@@ -1,15 +1,33 @@
+const bodyparser = require('body-parser');
 const Express = require('express');
 
 const communityHandler = require('./handlers/community');
+const abreConexao = require('./db/mongo.connnection');
 const personHandler = require('./handlers/person');
 
 
-function main() {
+
+async function main() {
     const app = Express();
 
-    app.get('/community', communityHandler);
+    const client = await abreConexao();
 
-    app.get('/person', personHandler);
+    app.use(bodyparser.json());
+
+    const logger = (dados) => console.log(dados);
+    
+    app.use('*', async (req, res, next) => {
+        req.db = client;
+        // Exemplo de uma função helper
+        req.logger = logger;
+        
+        next();
+    });
+
+    app.get('/community', communityHandler.getHandler);
+
+    app.get('/person', personHandler.getHandler);
+    app.post('/person', personHandler.postHandler);
 
     app.listen(
         Number(process.env.PORT), 

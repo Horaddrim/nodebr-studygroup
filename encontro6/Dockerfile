@@ -8,7 +8,7 @@ RUN npm install
 
 ENV NODE_ENV=PRODUCAO
 
-ENV PORT=8000
+ENV PORT=9000
 
 CMD [ "npm", "start" ]
 

@@ -1,5 +1,15 @@
-const Person = require('./../../entities/person');
+const postHandler = require('./post');
 
-module.exports = function(req, res) {
-    res.send(new Person());
+async function getHandler(req, res) {
+    req.logger('Recebi uma conexão!');
+    const {db} = req;
+
+    const resultados = await db.users.find({}).toArray();
+
+    res.send(resultados);
 }
+
+module.exports = {
+    getHandler,
+    postHandler,
+};

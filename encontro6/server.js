@@ -2,7 +2,7 @@ const dotenv = require('dotenv');
 
 const app = require('./src/app');
 
-function main() {
+async function main() {
     switch(process.env.NODE_ENV) {
         case 'PRODUCAO':
             dotenv.config({path: './config/.env.prod'});
@@ -14,7 +14,7 @@ function main() {
             dotenv.config({path: './config/.env.dev'});
     }
 
-    app();
+    await app();
 }
 
 main();

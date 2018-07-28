@@ -1,5 +1,13 @@
-const Community = require('./../../entities/community');
 
-module.exports = function(req, res) {
-    res.send(new Community());
+async function getHandler(req, res) {
+    req.logger('Recebi uma conexão!');
+    const {db} = req;
+
+    const resultados = await db.community.find({}).toArray();
+
+    res.send(resultados);
+};
+
+module.exports = {
+    getHandler,
 };
